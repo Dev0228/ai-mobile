@@ -1,4 +1,4 @@
-import MultiRing from "@/customUI/MultiRing";
+import MultiRing from "@/components/customUI/MultiRing";
 import type { LastIncomeItem } from "@/types/adminDashboard";
 import React from "react";
 import { Text, View } from "react-native";

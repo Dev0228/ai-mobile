@@ -1,4 +1,4 @@
-import SimpleHorizontalBarChart from "@/customUI/SimpleHorizontalBarChart";
+import SimpleHorizontalBarChart from "@/components/customUI/SimpleHorizontalBarChart";
 import inter from "@/fonts/inter-medium.ttf";
 import type { NewEmployesItem } from "@/types/userDashboard";
 import { useFont } from "@shopify/react-native-skia";
@@ -25,7 +25,7 @@ export default function SolidProducts(props: SolidProductsProps) {
               width: 10,
               height: 10,
               borderRadius: 5,
-              backgroundColor: "#3dd34c", // or any color you want for Coders
+              backgroundColor: "#3dd34c",
               marginRight: 4,
             }}
           />
@@ -35,9 +35,9 @@ export default function SolidProducts(props: SolidProductsProps) {
               width: 10,
               height: 10,
               borderRadius: 5,
-              backgroundColor: "#2280ff", // or any color you want for Designers
+              backgroundColor: "#2280ff",
               marginRight: 4,
-              marginLeft: 12, // space between the two dots
+              marginLeft: 12,
             }}
           />
           <Text className="text-white text-xs sm:text-base">Designers</Text>

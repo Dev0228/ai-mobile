@@ -1,4 +1,4 @@
-import LineChart from "@/customUI/LineChart";
+import LineChart from "@/components/customUI/LineChart";
 import type { CodersTypeItem } from "@/types/userDashboard";
 import { Text, View } from "react-native";
 

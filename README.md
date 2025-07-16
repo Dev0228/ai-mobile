@@ -1,50 +1,56 @@
-# Welcome to your Expo app 👋
+# AIDONIC Mobile
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+This is the mobile app for the AIDONIC project, built with React Native and Expo.
 
-## Get started
+## Prerequisites
 
-1. Install dependencies
+- [Node.js](https://nodejs.org/) (v16 or higher recommended)
+- [npm](https://www.npmjs.com/)
+- [Expo CLI](https://docs.expo.dev/get-started/installation/):
+
+  ```bash
+  npm install -g expo-cli
+  ```
+
+## Installation
+
+1. Open a terminal and navigate to the `mobile` directory:
+
+   ```bash
+   cd mobile
+   ```
+
+2. Install dependencies:
 
    ```bash
    npm install
    ```
 
-2. Start the app
+## Running the App
 
-   ```bash
-   npx expo start
-   ```
-
-In the output, you'll find options to open the app in a
-
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
-
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
-
-## Get a fresh project
-
-When you're ready, run:
+To start the Expo development server:
 
 ```bash
-npm run reset-project
+npm start
 ```
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+or
 
-## Learn more
+```bash
+expo start
+```
 
-To learn more about developing your project with Expo, look at the following resources:
+- Use the Expo Go app on your mobile device to scan the QR code and run the app.
+- You can also run the app on an emulator or simulator.
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+## Building for Production
 
-## Join the community
+See the [Expo documentation](https://docs.expo.dev/workflow/publishing/) for details on building standalone apps.
 
-Join our community of developers creating universal apps.
+## Project Structure
 
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+- `app/` - App entry points and screens
+- `components/` - Reusable UI components
+- `services/` - API and business logic
+
+---

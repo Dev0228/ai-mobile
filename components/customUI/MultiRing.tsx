@@ -11,9 +11,9 @@ export interface MultiRingProps {
   innerRadius: number;
   outerRadius: number;
   segments: RingSegmentData[];
-  startAngleDeg?: number; // optional, default 0
-  endAngleDeg?: number; // optional, default 360
-  direction?: "clockwise" | "counterclockwise"; // default: "clockwise"
+  startAngleDeg?: number;
+  endAngleDeg?: number;
+  direction?: "clockwise" | "counterclockwise";
 }
 
 const polarToCartesian = (
@@ -78,7 +78,6 @@ const MultiRing = ({
         let nextAngle;
         if (direction === "counterclockwise") {
           nextAngle = currentAngle - segAngle;
-          // Swap start/end for drawing
           const path = describeArc(
             centerX,
             centerY,
@@ -90,7 +89,6 @@ const MultiRing = ({
           currentAngle = nextAngle;
           return <Path key={i} d={path} fill={seg.color} fillRule="evenodd" />;
         } else {
-          // Default: clockwise
           nextAngle = currentAngle + segAngle;
           const path = describeArc(
             centerX,

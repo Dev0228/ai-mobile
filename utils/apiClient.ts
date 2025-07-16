@@ -1,9 +1,7 @@
 import AsyncStorage from "@react-native-async-storage/async-storage";
 
-// Base API configuration
-const API_BASE_URL ="http://172.20.1.28:8080/api";
+const API_BASE_URL = "http://172.20.1.28:8080/api";
 
-// Generic API client
 class ApiClient {
   private baseURL: string;
 
@@ -24,7 +22,7 @@ class ApiClient {
     const config: RequestInit = {
       headers: {
         "Content-Type": "application/json",
-        ...await this.getAuthHeader(),
+        ...(await this.getAuthHeader()),
         ...options.headers,
       },
       ...options,
@@ -67,5 +65,4 @@ class ApiClient {
   }
 }
 
-// Create and export API client instance
 export const apiClient = new ApiClient(API_BASE_URL);

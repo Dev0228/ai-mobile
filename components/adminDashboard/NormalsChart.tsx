@@ -34,7 +34,6 @@ export default function NormalsChart(props: NormalsChartProps) {
             data={normalData}
             xKey="name"
             yKeys={["uv", "pv"]}
-            // domain={{ y: [0, 1500] }} // y-axis starts at 0
             padding={{ top: 30, bottom: 30 }}
             domainPadding={{ left: 30, right: 30 }}
             xAxis={{
@@ -59,22 +58,8 @@ export default function NormalsChart(props: NormalsChartProps) {
                 betweenGroupPadding={0.5}
                 barWidth={20}
               >
-                <BarGroup.Bar
-                  // chartBounds={chartBounds}
-                  points={points.uv}
-                  color={"#6d62f7"}
-                // barWidth={20}
-                />
-                <BarGroup.Bar
-                  // chartBounds={chartBounds}
-                  points={points.pv}
-                  color={"#544bbe"}
-                // roundedCorners={{
-                //   topLeft: 2,
-                //   topRight: 2,
-                // }}
-                // barWidth={20}
-                />
+                <BarGroup.Bar points={points.uv} color={"#6d62f7"} />
+                <BarGroup.Bar points={points.pv} color={"#544bbe"} />
               </BarGroup>
             )}
           </CartesianChart>

@@ -11,10 +11,10 @@ interface SimpleHorizontalBarChartProps {
   data: BarChartDatum[];
 }
 
-const HORIZONTAL_PADDING = 16; // matches the style padding
+const HORIZONTAL_PADDING = 16;
 const VALUE_WIDTH = 32;
 const BAR_MARGIN = 2;
-const EXTRA_MARGIN = 2; // for safety
+const EXTRA_MARGIN = 2;
 
 const SimpleHorizontalBarChart: React.FC<SimpleHorizontalBarChartProps> = ({
   data,
@@ -32,7 +32,6 @@ const SimpleHorizontalBarChart: React.FC<SimpleHorizontalBarChartProps> = ({
       ? Math.max(Math.floor(parentHeight / data.length) - BAR_MARGIN, 8)
       : 24;
 
-  // Calculate the max width available for the bar itself
   const availableBarWidth =
     parentWidth -
     2 * HORIZONTAL_PADDING -

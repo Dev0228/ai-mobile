@@ -14,7 +14,6 @@ const CodersTypeLineChart: React.FC<CodersTypeLineChartProps> = ({
   data,
   style,
 }) => {
-  // Find the max value for y domain
   const maxY = Math.max(...data.flatMap((d) => [d.uv, d.pv]), 1);
 
   const font = useFont(inter, 12);
@@ -42,20 +41,10 @@ const CodersTypeLineChart: React.FC<CodersTypeLineChartProps> = ({
       >
         {({ points }) => (
           <>
-            <Line
-              //   chartBounds={chartBounds}
-              points={points.uv}
-              color="#2280ff"
-              strokeWidth={3}
-            />
+            <Line points={points.uv} color="#2280ff" strokeWidth={3} />
             <Scatter points={points.uv} color="#2280ff" radius={6} />
             <Scatter points={points.uv} color="#000000" radius={4} />
-            <Line
-              //   chartBounds={chartBounds}
-              points={points.pv}
-              color="#3dd34c"
-              strokeWidth={3}
-            />
+            <Line points={points.pv} color="#3dd34c" strokeWidth={3} />
             <Scatter points={points.pv} color="#3dd34c" radius={6} />
             <Scatter points={points.pv} color="#000000" radius={4} />
           </>

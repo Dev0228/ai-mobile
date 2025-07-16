@@ -64,7 +64,6 @@ export default function Login({
           </View>
 
           <Button
-            // ="w-full bg-blue-400 hover:bg-blue-500 text-black font-medium py-2 rounded text-xs sm:text-base transition-colors disabled:opacity-50"
             disabled={loading}
             title={loading ? "Signing in..." : "Sign In"}
             onPress={onSubmit}

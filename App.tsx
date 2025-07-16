@@ -1,35 +1,21 @@
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { NavigationContainer } from "@react-navigation/native";
+import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { Provider } from "react-redux";
 import { store } from "./store";
-import AppContainer from "./containers/AppContainer";
-import IndexPage from "./pages/IndexPage";
-import LoginPage from "./pages/LoginPage";
-import DashboardPage from "./pages/DashboardPage";
-import { ProtectedRoute } from "./hocs/withAuth";
+import Login from "./app/auth/login";
+import Dashboard from "./app/dashboard/admin";
 
-function App() {
+const Stack = createNativeStackNavigator();
+
+export default function App() {
   return (
     <Provider store={store}>
-      <AppContainer>
-        <Router>
-          <div className="min-h-screen bg-gray-900 flex flex-col">
-            <Routes>
-              <Route path="/" element={<IndexPage />} />
-              <Route path="/login" element={<LoginPage />} />
-              <Route
-                path="/dashboard"
-                element={
-                  <ProtectedRoute>
-                    <DashboardPage />
-                  </ProtectedRoute>
-                }
-              />
-            </Routes>
-          </div>
-        </Router>
-      </AppContainer>
+      <NavigationContainer>
+        <Stack.Navigator initialRouteName="Login">
+          <Stack.Screen name="Login" component={Login} />
+          <Stack.Screen name="Dashboard" component={Dashboard} />
+        </Stack.Navigator>
+      </NavigationContainer>
     </Provider>
   );
 }
-
-export default App;

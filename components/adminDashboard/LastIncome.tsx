@@ -1,4 +1,4 @@
-import MultiRing from "@/customUI/MultiRing";
+import MultiRing from "@/components/customUI/MultiRing";
 import type { LastIncomeItem } from "@/types/adminDashboard";
 import React from "react";
 import { Dimensions, Text, View } from "react-native";
@@ -14,9 +14,15 @@ export default function LastData(props: LastIncomeProps) {
 
   const screenWidth = Dimensions.get("window").width;
 
+  const getMonthRange = () => {
+    const now = new Date();
+    return [new Date(now.getFullYear(), now.getMonth() - 8, 1), now]
+      .map((d) => d.toLocaleString("default", { month: "short" }))
+      .join(" - ");
+  };
+
   return (
     <View className="bg-black border-2 border-gray-700 w-full h-full flex flex-col rounded-lg">
-      {/* Card Header */}
       <View className="pb-2 flex-shrink-0 p-4 flex-row justify-between items-center">
         <Text className="text-gray-400 text-lg font-normal">Last Incomes</Text>
         <Text className="text-gray-400 text-lg font-normal">
@@ -24,14 +30,13 @@ export default function LastData(props: LastIncomeProps) {
         </Text>
       </View>
 
-      {/* Card Content */}
       <View className="flex flex-row justify-between p-4 sm:pb-8 gap-4 sm:gap-0">
         <View>
           <Text
             className="bg-green-400 hover:bg-green-600 text-black font-medium px-4 py-2 rounded text-xs sm:text-base"
             style={{ backgroundColor: "#323232" }}
           >
-            Apr - Jan
+            {getMonthRange()}
           </Text>
         </View>
         <View className="relative mx-auto">
